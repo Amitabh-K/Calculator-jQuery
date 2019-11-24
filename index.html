@@ -114,6 +114,26 @@
           $("#first-number").text(firstNumber);
         }
 
+      });
+      $(".operator").on("click", function() {
+
+        // Check if a first number has already been selected
+        // Or we've already run a calculation, if so we just exit.
+        if (!firstNumber || isCalculated) {
+          return false;
+        }
+
+        // Set isOperatorChosen to true so we start writing to secondNumber
+        isOperatorChosen = true;
+
+        // Store off the operator
+        operator = $(this).val();
+
+        // Set the HTML of the #operator to the text of what was clicked
+        $("#operator").text($(this).text());
+
+      });
+      
 
 </script>
 
